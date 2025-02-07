@@ -9,26 +9,23 @@ This lab focuses on essential user management in Kali Linux, covering commands f
 
 <h2>Languages and Utilities Used</h2>
 
-  - <b> useradd -D </b>
-  - <b> useradd </b>
-  - <b> cat /etc/passwd  </b>
-  - <b> cat /etc/passwd | grep </b> 
-  - <b> useradd -e YYYY-MM-DD </b>
-  - <b> chage -E YYYY-MM-DD </b>
-  - <b> usermod -l </b>
-  - <b>passwd </b>
-  - <b> passwd -l </b>
-  - <b> passwd -u </b>
-  - <b> su </b>
-  - <b> sudo su </b>
-  - <b> userdel </b>
+  - useradd
+  - cat /etc/passwd
+  - | grep
+  - useradd -e YYYY-MM-DD 
+  - chage -E YYYY-MM-DD
+  - usermod
+  - passwd 
+  - su
+  - sudo su
+  - userdel
 
 
 <h2>Environments Used </h2>
 
-- <b>Kali Linux</b>
+- Kali Linux
 
-<h2>Program walk-through:</h2>
+<h2>Lab Walk-Through:</h2>
 
 <p align="center">
 <b>useradd -D</b> :shows or sets the default settings applied when creating new user accounts: <br/>
@@ -56,6 +53,30 @@ This lab focuses on essential user management in Kali Linux, covering commands f
 <img src="https://i.imgur.com/kns0W2N.png" height="80%" width="80%" alt="User & Group Management"/>
 <br />
 <br />
+<b>usermod -l bob1 bob</b>: changes the username from 'bob' to 'bob1. Verified change and cat the /etc/passwd to see that bob is not listed as a user:  <br/>
+<img src="https://i.imgur.com/Aaaxaf3.png" height="80%" width="80%" alt="User & Group Management"/>
+<br />
+<br />
+<b>passwd bob1</b> : Prompts to set or change the password for the user 'bob1:  <br/>
+<img src="https://i.imgur.com/R1SD59H.png" height="80%" width="80%" alt="User & Group Management"/>
+<br />
+<br />
+<b> passwd -l bob1</b> : locks the account 'bob1,' preventing the user from logging in. Ensure you are logged in as the root user, as only root can lock other users' accounts: <br />
+  <img src="https://i.imgur.com/WWA5hE6.png" height="80%" width="80%" alt="User & Group Management"/>
+<br />
+<br />
+<b> su bob1 </b> : attempts to switch to the user 'bob1' in the current session, but will be denied due to the account being locked by the admin, 
+  preventing login access. Ensure you're not logged in as root, as root has the privileges to override such restrictions: <br />
+  <img src="https://i.imgur.com/z9t8Ghr.png" height="80%" width="80%" alt="User & Group Management"/>
+<br />
+<br />
+<b>passwd -u bob1Z</b> : unlocks the account 'bob1,' re-enabling login access. Ensure you are logged in as the root user, as only root has the necessary privileges to unlock user accounts: <br />
+ <img src="https://i.imgur.com/uqHRWDK.png" height="80%" width="80%" alt="User & Group Management"/>
+<br />
+<br />
+<b>userdel bob1</b> : Deletes the user account 'bob1.' Note: This will only remove the user entry, not the home directory or files, unless additional options are specified. 
+  Verify if the user 'bob1' still exists in the /etc/passwd file after deletion: <br />
+ <img src="https://i.imgur.com/aTq2pbs.png" height="80%" width="80%" alt="User & Group Management"/>
 </p>
 
 <!--
