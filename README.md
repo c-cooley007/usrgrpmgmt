@@ -1,7 +1,8 @@
 <h1>User & Group Management</h1>
 
-<!-- ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
-!-->
+<!-- [Learning tool](https://www.youtube.com/watch?v=OEivyuCmicc)
+--!>
+
 <h2>Description</h2>
 This lab focuses on essential user management in Kali Linux, covering commands for creating, modifying, and deleting user accounts. You’ll learn to manage user settings, modify account details, and control system access through user locks and deletions. By the end, you'll be equipped with the skills to perform vital system administration tasks to ensure a secure and organized Linux environment.
 <br />
